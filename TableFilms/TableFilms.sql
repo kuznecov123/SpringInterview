@@ -3,20 +3,20 @@ create table sessions
     id          bigserial primary key,
     film_id bigint references films (id),
     begin_film timestamp ,
-    price       integer ,
+    price       integer
 );
 
 create table films
 (
     id          bigserial primary key,
     name         varchar(60) not null unique,
-    duration    decimal,
+    duration    decimal
 
 );
 create table tickets
 (
     id          bigserial primary key,
-    session_id bigint references sessions (id),
+    session_id bigint references sessions (id)
 );
 insert into films (id, name, duration)
 values (1, 'film1', '60'),
